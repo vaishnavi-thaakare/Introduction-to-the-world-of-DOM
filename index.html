@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducing to the world of DOM</title>
+</head>
+
+<body>
+    <h1>Introducing to the world of DOM</h1>
+    <h3>getElementById</h3>
+    <div class="container">
+        <form action="quiz">
+            <label for="input1">Enter your first name</label>
+            <input type="text" id="input1" placeholder="Enter your first name">
+            <label for="input2">Enter your last name</label>
+            <input type="text" id="input2" placeholder="Enter your first name">
+            <label for="input3">Enter your Email</label>
+            <input type="email" id="input3" placeholder="Enter your first name">
+            <button id="btn">Click Me!</button>
+            <div class="container"></div>
+
+
+        </form>
+
+
+    </div>
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="nav-brand">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="section-23.html">section-23</a></li>
+                    <li><a href="/">section-24</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <p>The tag can be placed in the section of your HTML or in the section, depending on when you want the
+            JavaScript to load. Generally, JavaScript code can go inside of the document section in order to keep them
+            contained and out of the main content of your HTML document</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h1>Code</h1>
+    <hr>
+    <h3>@ getElementById</h3>
+    let input1 = document.getElementById("input1");
+    console.log(input1);
+    let button = document.querySelector("#btn");
+    console.log(button);
+
+    <hr>
+    <h3>@ getElementsByClass</h3>
+    const class1 = document.getElementsByClassName("container");
+console.log(class1)
+console.log(class1[3])
+
+    <hr>
+    <h3>@ QuerySelector and QueryselectorAll</h3>
+    const input1 = document.querySelector("#btn");
+console.log(input1)
+
+const container1 = document.querySelector(".container");
+console.log(container1);
+const container2 = document.querySelectorAll(".container");
+console.log(container2);
+
+
+
+
+
+
+
+
+
+<script src="app.js"></script>
+
+</body>
+
+
+</html>
