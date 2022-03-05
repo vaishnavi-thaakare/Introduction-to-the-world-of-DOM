@@ -7,27 +7,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introducing to the world of DOM</title>
 </head>
+<style>
+    .output{
+        border:2px solid red;
+        height:20vh;
+
+    }
+
+    #para1{
+        display:none;
+    }
+    #heading{
+        text-align: center;
+        color:red;
+        font-size:xx-large;
+        font-weight: bolder;
+        border-left: 4rem;
+    }
+    .changing-style{
+        display: block;
+        background-color: aqua;
+        padding:2rem;
+        text-align: center;
+        font-size: xx-large;
+    }
+    .changeColor{
+        background-color: brown;
+        color:white;
+    }
+    .secondChangeColor{
+        background-color: black;
+        color:yellow;
+
+
+    }
+    .toggleEffects{
+        box-sizing: border-box;
+        background-color: orangered;
+        color: aliceblue;
+        border: 6px solid black;
+        transform:scale(2);
+    }
+    
+
+    
+</style>
 
 <body>
-    <h1>Introducing to the world of DOM</h1>
+  
+    <h1    id="heading">  Introducing to the world of DOM</h1>
     <h3>getElementById</h3>
     <div class="container">
         <form action="quiz">
-            <label for="input1">Enter your first name</label>
+            <label for="input1"><b>Enter your first name</b></label>
             <input type="text" id="input1" placeholder="Enter your first name">
             <label for="input2">Enter your last name</label>
             <input type="text" id="input2" placeholder="Enter your first name">
             <label for="input3">Enter your Email</label>
             <input type="email" id="input3" placeholder="Enter your first name">
             <button id="btn">Click Me!</button>
-            <div class="container"></div>
+            <div class="output">Output will be display here </div>
+            <p id="para"> Hello ,<b>good morning</b> , <em>welcome to this site
+
+            </em> </p>
+            <p id="para1">Check for the content in display . <strong>It is not there </strong></p>
+
 
 
         </form>
 
 
     </div>
-    <div class="container">
+    <div class="nav-container">
         <nav class="nav-bar">
             <div class="nav-brand">
                 <ul>
@@ -80,6 +131,139 @@ const container1 = document.querySelector(".container");
 console.log(container1);
 const container2 = document.querySelectorAll(".container");
 console.log(container2);
+<hr>
+<h3>@ innerHTML, innerText and textcontent</h3>
+let firstConatiner = document.querySelector(".container");
+let input1 = document.querySelector("#input1");
+let output = document.querySelector(".output");
+let para = document.querySelector("#para");
+let para1 = document.querySelector("#para1");
+
+
+console.log(para.innerHTML);
+console.log(para.innerText);
+console.log(para.textContent);
+
+
+
+output.innerHTML= "I am using <b>innerHTML</b> now. It will replace set content.";
+
+output.innerText = "I am using <b>innertext</b> now. It will replace set content.";
+
+output.textContent = "I am using <b>textcontent</b> now. It will replace set content.";
+
+<hr>
+<h3>@ Changing style</h3>
+style="color:blue " 
+ add inline style element in h1 tag 
+
+ const heading = document.querySelector("#heading");
+const allLinks = document.querySelectorAll("a");
+console.log(allLinks)
+console.log(heading);
+console.log(heading.style.color);
+heading.style.color = "green";
+heading.style.fontSize = "smaller";
+
+
+for (let link of allLinks) {
+    link.style.fontSize = "larger";
+    link.style.color = "orange";
+    link.style.textDecorationStyle = "wavy";
+}
+
+ <h1 class="changing-style">Changing Style</h1>
+ const changingStyle = document.querySelector(".changing-style");
+console.log(changingStyle);
+
+changingStyle.addEventListener("click", onClickEvent);
+function onClickEvent() {
+    changingStyle.classList.add("changeColor","secondChangeColor")
+}
+
+
+
+
+
+2] Remove class
+function onClickEvent() {
+    changingStyle.classList.remove("changeColor")
+}
+
+
+
+3] length
+console.log(changingStyle.classList.length)
+
+
+
+4] Toggle- on | off
+changingStyle.addEventListener("click", onClickEvent2);
+function onClickEvent2() {
+    changingStyle.classList.toggle("toggleEffects")
+    
+
+
+
+ 5] index
+
+    changingStyle.classList.add("changeColor", "secondChangeColor", "xyz", "abc", "pqr", "lmn");
+    let x = changingStyle.classList.item(4);
+    console.log(x);
+
+
+
+ <hr>
+ <h3>@ Append child </h3>   
+ const createElement = document.createElement("h2");
+const newText = document.createTextNode("We are going to append.");
+createElement.appendChild(newText);
+console.log(createElement);
+console.log(newText);
+
+ 
+
+
+<hr>
+<h3>@ Replace child</h3>
+<ul id="list">
+    <li>Orange</li>
+    <li>Blue</li>
+    <li>Pink</li>
+    <li>Black</li>
+</ul>
+
+
+<hr>
+<h3>@ Remove Child </h3>
+let target = document.getElementById("list");
+console.log(target);
+let oldElement = target.children[0];
+console.log(oldElement);
+
+
+let newElement = document.createElement("li");
+let newText = document.createTextNode(" You have successfully replace the item")
+newElement.appendChild(newText)
+
+target.replaceChild(newElement,oldElement)
+
+
+
+<hr>
+<h3>@ Replace child </h3>
+let target = document.getElementById("list");
+console.log(target);
+let oldElement = target.children[0];
+
+target.removeChild(oldElement)
+
+
+
+
+
+
+
 
 
 
